@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Portal } from 'react-portal';
+import classNames from 'classnames';
 
 const noop = () => {};
 
@@ -54,9 +55,12 @@ class Modal extends Component {
 			'data-ts.title': this.props.title,
 			'data-ts.open': this.props.isOpen
 		};
+		const dialogClass = classNames({
+			'ts-micro-modal': this.props.isMicroSize
+		});
 		return (
 			<Portal>
-				<dialog data-ts="Modal" {...modalProps} ref={this.onRef}>
+				<dialog data-ts="Modal" {...modalProps} ref={this.onRef} className={dialogClass}>
 					<div data-ts="Panel">{this.props.children}</div>
 				</dialog>
 			</Portal>
@@ -72,7 +76,8 @@ Modal.propTypes = {
 	onOpen: PropTypes.func,
 	onOpened: PropTypes.func,
 	title: PropTypes.string,
-	buttons: PropTypes.arrayOf(PropTypes.object)
+	buttons: PropTypes.arrayOf(PropTypes.object),
+	isMicroSize: PropTypes.bool
 };
 
 Modal.defaultProps = {
@@ -83,7 +88,8 @@ Modal.defaultProps = {
 	onOpen: noop,
 	onOpened: noop,
 	title: 'Modal',
-	buttons: undefined
+	buttons: undefined,
+	isMicroSize: false
 };
 
 export default Modal;
