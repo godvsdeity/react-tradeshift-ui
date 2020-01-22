@@ -300,6 +300,7 @@ exports[`Menu Basic usage 1`] = `
 exports[`Modal Controlled mode 1`] = `
 <portal>
   <dialog
+    className=""
     data-ts="Modal"
     data-ts.open={false}
     data-ts.title="Fullscreen Modal demo"
@@ -336,6 +337,7 @@ exports[`Modal Controlled mode 1`] = `
 exports[`Modal Controlled mode with buttons 1`] = `
 <portal>
   <dialog
+    className=""
     data-ts="Modal"
     data-ts.open={false}
     data-ts.title="Fullscreen Modal demo"
