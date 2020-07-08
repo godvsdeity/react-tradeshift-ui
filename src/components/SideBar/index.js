@@ -7,7 +7,7 @@ const noop = () => {};
 class SideBar extends Component {
 	static wrapContent(nodes) {
 		const children = React.Children.toArray(nodes);
-		const wrappedTabs = children.every(node => node.props['data-ts'] === 'Panel');
+		const wrappedTabs = children.every((node) => node.props['data-ts'] === 'Panel');
 		return nodes && wrappedTabs ? nodes : <div data-ts="Panel">{nodes}</div>;
 	}
 
@@ -40,7 +40,7 @@ class SideBar extends Component {
 			return;
 		}
 
-		window.ts.ui.get(ref, spirit => {
+		window.ts.ui.get(ref, (spirit) => {
 			spirit.onclose = this.onClose;
 			spirit.onclosed = this.props.onClosed;
 			spirit.onopen = this.onOpen;
@@ -54,7 +54,7 @@ class SideBar extends Component {
 		const asideProps = {
 			'data-ts.title': title,
 			'data-ts.open': isOpen,
-			'data-ts.busy': busyMessage
+			'data-ts.busy': busyMessage,
 		};
 
 		if (className) {
@@ -82,7 +82,7 @@ SideBar.propTypes = {
 	onOpen: PropTypes.func,
 	onOpened: PropTypes.func,
 	title: PropTypes.string,
-	className: PropTypes.string
+	className: PropTypes.string,
 };
 
 SideBar.defaultProps = {
@@ -95,7 +95,7 @@ SideBar.defaultProps = {
 	onOpen: noop,
 	onOpened: noop,
 	title: 'SideBar',
-	className: ''
+	className: '',
 };
 
 export default SideBar;

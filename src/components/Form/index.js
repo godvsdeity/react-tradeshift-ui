@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Form = props => (
+const Form = (props) => (
 	<form data-ts="Form" {...props}>
 		{props.children}
 	</form>
 );
 
 Form.defaultProps = {
-	children: []
+	children: [],
 };
 
 Form.propTypes = {
-	children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
+	children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
 
 export default Form;

@@ -26,8 +26,8 @@ stories.add(
 	),
 	{
 		info: `In controlled mode the side bar will respect the isOpen attribute at all times.
-	Use the onClose callback to toggle the flag`
-	}
+	Use the onClose callback to toggle the flag`,
+	},
 );
 
 stories.add(
@@ -37,18 +37,18 @@ stories.add(
 			range: true,
 			min: 2,
 			max: 10,
-			step: 1
+			step: 1,
 		});
 		const tabs = [];
 		for (let index = 0; index < tabCount; index += 1) {
 			const tabLabel = {
-				'data-ts.label': ['tab', index].join(' ')
+				'data-ts.label': ['tab', index].join(' '),
 			};
 			const tabContent = ['tab', index, 'content'].join(' ');
 			tabs.push(
 				<div data-ts="Panel" key={index} {...tabLabel}>
 					{tabContent}
-				</div>
+				</div>,
 			);
 		}
 
@@ -68,6 +68,6 @@ stories.add(
 		);
 	},
 	{
-		info: 'SideBar may contain tabs content. Just define some Panels in specified format'
-	}
+		info: 'SideBar may contain tabs content. Just define some Panels in specified format',
+	},
 );

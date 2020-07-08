@@ -42,14 +42,14 @@ StatusBar.propTypes = {
 	buttons: PropTypes.arrayOf(PropTypes.object),
 	linkable: PropTypes.bool,
 	message: PropTypes.string,
-	visible: PropTypes.bool
+	visible: PropTypes.bool,
 };
 
 StatusBar.defaultProps = {
 	buttons: [],
 	linkable: false,
 	message: '',
-	visible: true
+	visible: true,
 };
 
 export default StatusBar;

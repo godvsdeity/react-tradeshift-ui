@@ -15,8 +15,8 @@ describe('Aside', () => {
 			const spirit = {};
 			window.ts = {
 				ui: {
-					get: (ref, cb) => cb(spirit)
-				}
+					get: (ref, cb) => cb(spirit),
+				},
 			};
 
 			wrapper.instance().onRef({});
@@ -26,7 +26,7 @@ describe('Aside', () => {
 			wrapper.setProps({
 				onClose() {
 					wrapper.setProps({ isOpen: false });
-				}
+				},
 			});
 			expect(spirit.onclose()).toEqual(true);
 		});

@@ -6,5 +6,5 @@ const stories = storiesOf('Form', module);
 
 stories.add('Basic structure', () => <Form />, {
 	info: `Form elements must be wrapped inside a Form component.
-	The Form component renders the basic ts-ui form structure`
+	The Form component renders the basic ts-ui form structure`,
 });

@@ -8,12 +8,12 @@ jest.mock('@storybook/addon-knobs', () => require('./__mocks__/knobs'));
 const Portal = ({ children }) => <portal>{children}</portal>;
 jest.doMock('react-portal', () => ({
 	__esModule: true,
-	Portal
+	Portal,
 }));
 
 window.ts = {
 	ui: {
-		ready: cb => cb(),
+		ready: (cb) => cb(),
 		Note: jest.fn().mockReturnValue({}),
 		Notification: jest.fn().mockReturnValue({}),
 		StatusBar: {
@@ -21,11 +21,11 @@ window.ts = {
 			message: jest.fn(),
 			buttons: jest.fn(),
 			show: jest.fn(),
-			hide: jest.fn()
+			hide: jest.fn(),
 		},
 		Footer: {
 			collabbutton: jest.fn(),
-			buttons: jest.fn()
+			buttons: jest.fn(),
 		},
 		TopBar: {
 			blue: jest.fn(),
@@ -35,14 +35,14 @@ window.ts = {
 			title: jest.fn(),
 			buttons: jest.fn(),
 			show: jest.fn(),
-			hide: jest.fn()
+			hide: jest.fn(),
 		},
-		get: jest.fn()
-	}
+		get: jest.fn(),
+	},
 };
 global.document = new JSDOM().window.document;
 global.document.getElementById = jest.fn().mockReturnValue(document.createElement('tooltip'));
 
 Portal.propTypes = {
-	children: PropTypes.object.isRequired
+	children: PropTypes.object.isRequired,
 };

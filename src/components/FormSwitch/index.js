@@ -46,7 +46,7 @@ Switch.propTypes = {
 	checked: PropTypes.bool,
 	defaultChecked: PropTypes.bool,
 	disabled: PropTypes.bool,
-	onChange: PropTypes.func
+	onChange: PropTypes.func,
 };
 
 Switch.defaultProps = {
@@ -55,7 +55,7 @@ Switch.defaultProps = {
 	checked: undefined,
 	defaultChecked: undefined,
 	disabled: false,
-	onChange: noop
+	onChange: noop,
 };
 
 export default Switch;

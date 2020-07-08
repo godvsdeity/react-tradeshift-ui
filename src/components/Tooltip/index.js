@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-const Tooltip = props => {
+const Tooltip = (props) => {
 	const { id, title, children } = props;
 	useEffect(() => {
-		let tooltipEle = document.getElementById(id);
+		const tooltipEle = document.getElementById(id);
 		tooltipEle.setAttribute('data-ts.title', title);
 	}, [id, title]);
 	return (
@@ -16,13 +16,13 @@ const Tooltip = props => {
 
 Tooltip.defaultProps = {
 	children: [],
-	title: ''
+	title: '',
 };
 
 Tooltip.propTypes = {
 	id: PropTypes.string.isRequired,
 	title: PropTypes.string,
-	children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
+	children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
 
 export default Tooltip;

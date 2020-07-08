@@ -6,12 +6,12 @@ const Menu = ({ children }) => <menu data-ts="Menu">{children}</menu>;
 Menu.propTypes = {
 	children: PropTypes.oneOfType([
 		PropTypes.arrayOf(PropTypes.node),
-		PropTypes.node
-	])
+		PropTypes.node,
+	]),
 };
 
 Menu.defaultProps = {
-	children: null
+	children: null,
 };
 
 export default Menu;

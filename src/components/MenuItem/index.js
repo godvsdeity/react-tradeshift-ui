@@ -14,13 +14,13 @@ const MenuItem = ({ children, selected, disabled }) => (
 MenuItem.propTypes = {
 	children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 	selected: PropTypes.bool,
-	disabled: PropTypes.bool
+	disabled: PropTypes.bool,
 };
 
 MenuItem.defaultProps = {
 	children: null,
 	selected: false,
-	disabled: false
+	disabled: false,
 };
 
 export default MenuItem;

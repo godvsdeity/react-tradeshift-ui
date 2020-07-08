@@ -13,7 +13,7 @@ describe('Modal', () => {
 
 			// Mock the spirit:
 			const spirit = {
-				buttons: () => {}
+				buttons: () => {},
 			};
 
 			// Mock spirit buttons method
@@ -23,8 +23,8 @@ describe('Modal', () => {
 				ui: {
 					get: (ref, cb) => {
 						cb(spirit);
-					}
-				}
+					},
+				},
 			};
 
 			wrapper.instance().onRef({});
@@ -34,7 +34,7 @@ describe('Modal', () => {
 			wrapper.setProps({
 				onClose() {
 					wrapper.setProps({ isOpen: false });
-				}
+				},
 			});
 			expect(spirit.onclose()).toEqual(true);
 		});

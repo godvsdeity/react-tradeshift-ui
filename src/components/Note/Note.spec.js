@@ -16,8 +16,8 @@ describe('Note', () => {
 			wrapper.setProps({ text: 'Bar' });
 			expect(component.update).toHaveBeenCalledWith(
 				jasmine.objectContaining({
-					text: 'Bar'
-				})
+					text: 'Bar',
+				}),
 			);
 		});
 

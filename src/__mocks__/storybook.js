@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 export const action = () => jest.fn();
 
 // Mocked version of `import { storiesOf } from "@kadira/storybook"`.
-export const storiesOf = groupName => {
+export const storiesOf = (groupName) => {
 	const createSpec = (storyName, story) => {
 		describe(groupName, () => {
 			it(storyName, () => {
@@ -22,7 +22,7 @@ export const storiesOf = groupName => {
 		},
 
 		addWithInfo(storyName, ...info) {
-			const fns = info.filter(x => typeof x === 'function');
+			const fns = info.filter((x) => typeof x === 'function');
 			const story = fns[fns.length - 1];
 			createSpec(storyName, story);
 			return api;
@@ -31,7 +31,7 @@ export const storiesOf = groupName => {
 		// Any `storybook-addon-*` packages may require noop-ing them:
 		addDecorator() {
 			return api;
-		}
+		},
 	};
 
 	return api;

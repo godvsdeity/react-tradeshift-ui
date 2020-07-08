@@ -9,14 +9,14 @@ describe('Spinner', () => {
 	it('updates on prop change', () => {
 		const wrapper = shallow(<Spinner show message="loading" blocking />);
 		const spirit = {
-			done: jest.fn()
+			done: jest.fn(),
 		};
 		window.ts = {
 			ui: {
 				get: (ref, cb) => {
 					cb(spirit);
-				}
-			}
+				},
+			},
 		};
 		wrapper.setProps({ show: false });
 		expect(spirit.done).toHaveBeenCalled();
