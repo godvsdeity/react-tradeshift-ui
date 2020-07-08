@@ -7,8 +7,8 @@ class Note extends React.Component {
 		this.update(this.props);
 	}
 
-	componentWillReceiveProps(nextProps) {
-		this.update(nextProps);
+	componentDidUpdate() {
+		this.update(this.props);
 	}
 
 	componentWillUnmount() {

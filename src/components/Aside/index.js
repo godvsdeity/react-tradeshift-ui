@@ -2,23 +2,19 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Portal } from 'react-portal';
 
-const noop = () => { };
+const noop = () => {};
 
 class Aside extends Component {
 	static wrapContent(nodes) {
 		const children = React.Children.toArray(nodes);
-		const wrappedTabs = children.every(node => node.props['data-ts'] === 'Panel');
+		const wrappedTabs = children.every((node) => node.props['data-ts'] === 'Panel');
 		if (nodes && wrappedTabs) {
 			if (children.length === 1) {
 				return nodes;
 			}
-			else {
-				return <div data-ts="Panels">{nodes}</div>;
-			}
+			return <div data-ts="Panels">{nodes}</div>;
 		}
-		else {
-			return <div data-ts="Panel">{nodes}</div>;
-		}
+		return <div data-ts="Panel">{nodes}</div>;
 	}
 
 	constructor(props) {
@@ -26,23 +22,16 @@ class Aside extends Component {
 		this.onRef = this.onRef.bind(this);
 		this.onOpen = this.onOpen.bind(this);
 		this.onClose = this.onClose.bind(this);
-
-		// Sync open flag for onclose / onopen callbacks
-		this.isOpen = props.isOpen;
-	}
-
-	componentWillReceiveProps(nextProps) {
-		this.isOpen = nextProps.isOpen;
 	}
 
 	onClose(e) {
 		this.props.onClose(e);
-		return typeof this.isOpen !== 'undefined' ? !this.isOpen : undefined;
+		return !this.props.isOpen;
 	}
 
 	onOpen(e) {
 		this.props.onOpen(e);
-		return this.isOpen;
+		return this.props.isOpen;
 	}
 
 	onRef(ref) {
@@ -50,7 +39,7 @@ class Aside extends Component {
 			return;
 		}
 
-		window.ts.ui.get(ref, spirit => {
+		window.ts.ui.get(ref, (spirit) => {
 			spirit.onclose = this.onClose;
 			spirit.onclosed = this.props.onClosed;
 			spirit.onopen = this.onOpen;
@@ -64,7 +53,7 @@ class Aside extends Component {
 		const asideProps = {
 			'data-ts.title': title,
 			'data-ts.open': isOpen,
-			'data-ts.busy': busyMessage
+			'data-ts.busy': busyMessage,
 		};
 
 		if (className) {
@@ -92,7 +81,7 @@ Aside.propTypes = {
 	onOpen: PropTypes.func,
 	onOpened: PropTypes.func,
 	title: PropTypes.string,
-	className: PropTypes.string
+	className: PropTypes.string,
 };
 
 Aside.defaultProps = {
@@ -105,7 +94,7 @@ Aside.defaultProps = {
 	onOpen: noop,
 	onOpened: noop,
 	title: 'Aside',
-	className: ''
+	className: '',
 };
 
 export default Aside;

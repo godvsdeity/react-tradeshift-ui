@@ -45,8 +45,8 @@ class Header extends Component {
 		Header.update(this.props);
 	}
 
-	componentWillReceiveProps(nextProps) {
-		Header.update(nextProps);
+	componentDidUpdate() {
+		Header.update(this.props);
 	}
 
 	render() {

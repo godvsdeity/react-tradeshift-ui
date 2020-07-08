@@ -6,8 +6,8 @@ class StatusBar extends Component {
 		this.update(this.props.visible, this.props.linkable, this.props.message, this.props.buttons);
 	}
 
-	componentWillReceiveProps(nextProps) {
-		this.update(nextProps.visible, nextProps.linkable, nextProps.message, nextProps.buttons);
+	componentDidUpdate() {
+		this.update(this.props.visible, this.props.linkable, this.props.message, this.props.buttons);
 	}
 
 	componentWillUnmount() {

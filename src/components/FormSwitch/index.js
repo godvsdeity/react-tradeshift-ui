@@ -7,16 +7,10 @@ class Switch extends Component {
 	constructor(props) {
 		super(props);
 		this.onChange = this.onChange.bind(this);
-		this.checked = props.checked;
-	}
-
-	componentWillReceiveProps(nextProps) {
-		this.checked = nextProps.checked;
 	}
 
 	onChange(e) {
 		this.props.onChange(e);
-		return typeof this.checked !== 'undefined' ? !this.checked : undefined;
 	}
 
 	render() {

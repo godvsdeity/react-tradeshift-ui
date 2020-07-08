@@ -11,24 +11,20 @@ class Modal extends Component {
 		this.onRef = this.onRef.bind(this);
 		this.onOpen = this.onOpen.bind(this);
 		this.onClose = this.onClose.bind(this);
-
-		// Sync open flag for onclose / onopen callbacks
-		this.isOpen = props.isOpen;
 	}
 
-	componentWillReceiveProps(nextProps) {
-		this.isOpen = nextProps.isOpen;
+	componentDidUpdate() {
 		this.onRef(this.modalRef);
 	}
 
 	onClose(e) {
 		this.props.onClose(e);
-		return typeof this.isOpen !== 'undefined' ? !this.isOpen : undefined;
+		return !this.props.isOpen;
 	}
 
 	onOpen(e) {
 		this.props.onOpen(e);
-		return this.isOpen;
+		return this.props.isOpen;
 	}
 
 	onRef(ref) {
