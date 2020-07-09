@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-require('./TsLogo.css');
-
-const TsLogo = props => {
+const TsLogo = (props) => {
 	const { className } = props;
 	const path =
 		'M72.5 1h-70C1 1 0 1.6 0 3v18c0 ' +
@@ -21,9 +19,16 @@ const TsLogo = props => {
 export default TsLogo;
 
 TsLogo.propTypes = {
-	className: PropTypes.string
+	className: PropTypes.string,
+	style: PropTypes.object,
 };
 
 TsLogo.defaultProps = {
-	className: ''
+	className: '',
+	style: {
+		display: 'inline-block',
+		width: '33px',
+		height: '22px',
+		opacity: 0.1,
+	},
 };

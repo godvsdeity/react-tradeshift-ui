@@ -5,7 +5,7 @@ export const COLOR = {
 	BLUE: 'blue',
 	DARK: 'dark',
 	GREEN: 'green',
-	PURPLE: 'purple'
+	PURPLE: 'purple',
 };
 
 class Header extends Component {
@@ -45,8 +45,8 @@ class Header extends Component {
 		Header.update(this.props);
 	}
 
-	componentWillReceiveProps(nextProps) {
-		Header.update(nextProps);
+	componentDidUpdate() {
+		Header.update(this.props);
 	}
 
 	render() {
@@ -59,7 +59,7 @@ Header.propTypes = {
 	buttons: PropTypes.arrayOf(PropTypes.object),
 	color: PropTypes.oneOf([COLOR.BLUE, COLOR.GREEN, COLOR.DARK, COLOR.PURPLE]),
 	title: PropTypes.string,
-	visible: PropTypes.bool
+	visible: PropTypes.bool,
 };
 /* eslint-enable react/no-unused-prop-types, react/require-default-props */
 
@@ -67,7 +67,7 @@ Header.defaultProps = {
 	color: COLOR.DARK,
 	buttons: [],
 	title: '',
-	visible: true
+	visible: true,
 };
 
 export default Header;

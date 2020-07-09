@@ -7,8 +7,8 @@ class Note extends React.Component {
 		this.update(this.props);
 	}
 
-	componentWillReceiveProps(nextProps) {
-		this.update(nextProps);
+	componentDidUpdate() {
+		this.update(this.props);
 	}
 
 	componentWillUnmount() {
@@ -23,7 +23,7 @@ class Note extends React.Component {
 			this.note = window.ts.ui.Note({
 				icon: props.icon,
 				text: props.text,
-				onclose: props.onClose
+				onclose: props.onClose,
 			});
 			this.note.icon = props.icon;
 			this.note.text = props.text;
@@ -39,12 +39,12 @@ class Note extends React.Component {
 Note.propTypes = {
 	icon: PropTypes.string,
 	text: PropTypes.string.isRequired,
-	onClose: PropTypes.func
+	onClose: PropTypes.func,
 };
 
 Note.defaultProps = {
 	icon: null,
-	onClose: () => {}
+	onClose: () => {},
 };
 
 export default Note;

@@ -7,7 +7,7 @@ const stories = storiesOf('Table', module);
 stories.add('Basic usage', () => {
 	const tableConfig = {
 		cols: [{ label: 'One' }, { label: 'Two' }, { label: 'Three' }],
-		rows: [['A', 'D', 'G'], ['B', 'E', 'H'], ['C', 'F', 'I']]
+		rows: [['A', 'D', 'G'], ['B', 'E', 'H'], ['C', 'F', 'I']],
 	};
 	const shouldShow = boolean('shouldShow', false);
 	return shouldShow ? (
@@ -25,28 +25,28 @@ stories.add('Linkable table element', () => {
 				'Male',
 				{
 					text: '[sayHello](sayHello)',
-					type: 'say-hello'
-				}
+					type: 'say-hello',
+				},
 			],
 			[
 				'Lucy',
 				'Female',
 				{
 					text: '[sayHello](sayHello)',
-					type: 'say-hello'
-				}
+					type: 'say-hello',
+				},
 			],
 			[
 				'Li Lei',
 				'Male',
 				{
 					text: '[sayHello](sayHello)',
-					type: 'say-hello'
-				}
-			]
-		]
+					type: 'say-hello',
+				},
+			],
+		],
 	};
-	const handleLinkable = action => {
+	const handleLinkable = (action) => {
 		if (action === 'sayHello') {
 			window.ts.ui.Notification.info('hello');
 		}

@@ -21,7 +21,7 @@ describe('StatusBar', () => {
 				visible: true,
 				linkable: true,
 				message: 'Bar',
-				buttons: []
+				buttons: [],
 			});
 			expect(component.update).toHaveBeenCalledWith(true, true, 'Bar', []);
 		});
@@ -29,7 +29,7 @@ describe('StatusBar', () => {
 		it('hides if visible prop is false', () => {
 			expect(component.bar).toBeDefined();
 			wrapper.setProps({
-				visible: false
+				visible: false,
 			});
 			expect(component.bar.hide).toHaveBeenCalled();
 		});

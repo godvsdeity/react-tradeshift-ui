@@ -12,8 +12,8 @@ stories.add(
 		</Button>
 	),
 	{
-		info: `A simple Button does not require any props`
-	}
+		info: 'A simple Button does not require any props',
+	},
 );
 
 stories.add(
@@ -24,8 +24,8 @@ stories.add(
 		</Button>
 	),
 	{
-		info: 'A primary Button requires `ts-primary` className'
-	}
+		info: 'A primary Button requires `ts-primary` className',
+	},
 );
 
 stories.add(
@@ -36,8 +36,8 @@ stories.add(
 		</Button>
 	),
 	{
-		info: 'A secondary Button requires `ts-secondary` className'
-	}
+		info: 'A secondary Button requires `ts-secondary` className',
+	},
 );
 
 stories.add(
@@ -48,8 +48,8 @@ stories.add(
 		</Button>
 	),
 	{
-		info: 'A tertiary Button requires `ts-tertiary` className'
-	}
+		info: 'A tertiary Button requires `ts-tertiary` className',
+	},
 );
 
 stories.add(
@@ -61,8 +61,8 @@ stories.add(
 	),
 	{
 		info:
-			'A mirco Button requires `ts-micro` and one of `ts-primary` `ts-secondary` `ts-tertiary` className'
-	}
+			'A mirco Button requires `ts-micro` and one of `ts-primary` `ts-secondary` `ts-tertiary` className',
+	},
 );
 
 stories.add(
@@ -73,8 +73,8 @@ stories.add(
 		</Button>
 	),
 	{
-		info: 'For making a Button busy, set `busy={true}`'
-	}
+		info: 'For making a Button busy, set `busy={true}`',
+	},
 );
 
 stories.add(
@@ -85,6 +85,6 @@ stories.add(
 		</Button>
 	),
 	{
-		info: 'For more information visit `tradeshift-ui` documentation page'
-	}
+		info: 'For more information visit `tradeshift-ui` documentation page',
+	},
 );

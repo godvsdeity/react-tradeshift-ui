@@ -21,8 +21,8 @@ stories.add(
 		</Buttons>
 	),
 	{
-		info: `The basic structure`
-	}
+		info: 'The basic structure',
+	},
 );
 
 stories.add(
@@ -43,6 +43,6 @@ stories.add(
 	),
 	{
 		info:
-			'Buttons component accepts attributes describes in `tradeshift-ui buttons` documentation page'
-	}
+			'Buttons component accepts attributes describes in `tradeshift-ui buttons` documentation page',
+	},
 );

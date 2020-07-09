@@ -1,103 +1,102 @@
 {
-  "name": "react-tradeshift-ui",
-  "version": "0.0.0-semantically-released",
-  "main": "dist/components.js",
-  "module": "dist/components.js",
-  "license": "SEE LICENSE IN LICENSE.md",
-  "scripts": {
-    "build": "webpack --mode production",
-    "prepublish": "npm run build",
-    "build-storybook": "build-storybook",
-    "start": "start-storybook -p 9009",
-    "lint": "eslint src",
-    "test": "react-scripts test --env=jsdom",
-    "test:debug": "react-scripts --inspect-brk test --runInBand --no-cache",
-    "prettier": "prettier --write --use-tabs --single-quote --print-width 100 --color src",
-    "report-coverage": "cat ./coverage/lcov.info | codecov",
-    "commitmsg": "opt --in commit-msg --exec \"validate-commit-msg\"",
-    "precommit": "lint-staged",
-    "commit": "git-cz",
-    "storybook": "start-storybook -p 9009"
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --color",
-      "prettier --write --use-tabs --single-quote --print-width 100 --color",
-      "git add"
-    ]
-  },
-  "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-conventional-changelog"
-    }
-  },
-  "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
-    "@babel/preset-react": "^7.0.0",
-    "@storybook/addon-actions": "^5.1.9",
-    "@storybook/addon-info": "^5.1.9",
-    "@storybook/addon-knobs": "^5.1.9",
-    "@storybook/addon-links": "^5.1.9",
-    "@storybook/addon-notes": "^5.1.9",
-    "@storybook/addon-options": "^5.1.9",
-    "@storybook/addons": "^5.1.9",
-    "@storybook/react": "^5.1.9",
-    "@types/jest": "^24.0.15",
-    "@types/react": "^16.9.23",
-    "@types/react-dom": "^16.9.5",
-    "@types/react-portal": "^4.0.2",
-    "@types/react-test-renderer": "^16.9.2",
-    "@types/webpack": "^4.4.34",
-    "codecov.io": "^0.1.6",
-    "commitizen": "^3.1.1",
-    "cz-conventional-changelog": "^2.1.0",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
-    "enzyme-to-json": "^3.4.2",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-jest": "^22.7.1",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.14.2",
-    "husky": "^2.7.0",
-    "jsdom": "^15.1.1",
-    "lint-staged": "^8.2.1",
-    "lodash": "^4.17.11",
-    "mini-css-extract-plugin": "^0.7.0",
-    "opt-cli": "^1.6.0",
-    "prettier": "^1.18.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "^3.0.1",
-    "react-test-renderer": "^16.12.0",
-    "semantic-release": "^15.13.18",
-    "validate-commit-msg": "^2.14.0",
-    "webpack": "~4.29.0",
-    "webpack-cli": "^3.3.5"
-  },
-  "dependencies": {
-    "@types/classnames": "2.2.8",
-    "classnames": "^2.2.6",
-    "prop-types": "^15.7.2",
-    "react-portal": "^4.2.0"
-  },
-  "peerDependencies": {
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "prop-types": "^15.7.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Tradeshift/react-tradeshift-ui.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Tradeshift/react-tradeshift-ui/issues"
-  },
-  "homepage": "https://github.com/Tradeshift/react-tradeshift-ui#readme"
+	"name": "react-tradeshift-ui",
+	"version": "0.0.0-semantically-released",
+	"main": "dist/components/index.js",
+	"module": "dist/components/index.js",
+	"license": "SEE LICENSE IN LICENSE.md",
+	"scripts": {
+		"build": "babel src --out-dir dist",
+		"prepublish": "npm run build",
+		"build-storybook": "build-storybook",
+		"start": "start-storybook -p 9009",
+		"lint": "eslint src",
+		"pretest": "eslint src",
+		"test": "react-scripts test --env=jsdom",
+		"test:debug": "react-scripts --inspect-brk test --runInBand --no-cache",
+		"prettier": "prettier --write --use-tabs --single-quote --print-width 100 --color src",
+		"report-coverage": "cat ./coverage/lcov.info | codecov",
+		"commitmsg": "opt --in commit-msg --exec \"validate-commit-msg\"",
+		"precommit": "lint-staged",
+		"commit": "git-cz",
+		"storybook": "start-storybook -p 9009"
+	},
+	"lint-staged": {
+		"*.js": [
+			"eslint --color",
+			"prettier --write --use-tabs --single-quote --print-width 100 --color",
+			"git add"
+		]
+	},
+	"jest": {
+		"snapshotSerializers": [
+			"enzyme-to-json/serializer"
+		]
+	},
+	"config": {
+		"commitizen": {
+			"path": "node_modules/cz-conventional-changelog"
+		}
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.10.4",
+		"@babel/core": "^7.4.5",
+		"@babel/preset-env": "^7.4.5",
+		"@babel/preset-react": "^7.0.0",
+		"@storybook/addon-actions": "^5.1.9",
+		"@storybook/addon-info": "^5.1.9",
+		"@storybook/addon-knobs": "^5.1.9",
+		"@storybook/addon-links": "^5.1.9",
+		"@storybook/addon-notes": "^5.1.9",
+		"@storybook/addon-options": "^5.1.9",
+		"@storybook/addons": "^5.1.9",
+		"@storybook/react": "^5.1.9",
+		"@types/jest": "^24.0.15",
+		"@types/react": "^16.9.23",
+		"@types/react-dom": "^16.9.5",
+		"@types/react-portal": "^4.0.2",
+		"@types/react-test-renderer": "^16.9.2",
+		"codecov.io": "^0.1.6",
+		"commitizen": "^3.1.1",
+		"cz-conventional-changelog": "^2.1.0",
+		"enzyme": "^3.10.0",
+		"enzyme-adapter-react-16": "^1.14.0",
+		"enzyme-to-json": "^3.4.2",
+		"eslint-config-airbnb": "^17.1.0",
+		"eslint-plugin-import": "^2.18.0",
+		"eslint-plugin-jest": "^22.7.1",
+		"eslint-plugin-jsx-a11y": "^6.2.1",
+		"eslint-plugin-react": "^7.14.2",
+		"husky": "^2.7.0",
+		"jsdom": "^15.1.1",
+		"lint-staged": "^8.2.1",
+		"lodash": "^4.17.11",
+		"mini-css-extract-plugin": "^0.7.0",
+		"opt-cli": "^1.6.0",
+		"prettier": "^1.18.2",
+		"react": "^16.12.0",
+		"react-dom": "^16.12.0",
+		"react-scripts": "^3.0.1",
+		"react-test-renderer": "^16.12.0",
+		"semantic-release": "^15.13.18",
+		"validate-commit-msg": "^2.14.0"
+	},
+	"dependencies": {
+		"@types/classnames": "2.2.8",
+		"classnames": "^2.2.6",
+		"prop-types": "^15.7.2",
+		"react-portal": "^4.2.0"
+	},
+	"peerDependencies": {
+		"react": "^16.12.0",
+		"react-dom": "^16.12.0",
+		"prop-types": "^15.7.2"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Tradeshift/react-tradeshift-ui.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Tradeshift/react-tradeshift-ui/issues"
+	},
+	"homepage": "https://github.com/Tradeshift/react-tradeshift-ui#readme"
 }

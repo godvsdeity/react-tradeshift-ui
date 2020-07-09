@@ -1,13 +1,18 @@
+/* eslint-disable react/no-unused-prop-types */
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
-const Table = props => {
-	const renderTable = props => {
-		const { id, cols, rows, onbutton, linkable, pager, explode, selectable } = props;
-		window.ts.ui.get(`#${id}`, table => {
-			explode && table.explode();
-			selectable && table.selectable();
+const Table = (props) => {
+	const renderTable = (renderProps) => {
+		const { id, cols, rows, onbutton, linkable, pager, explode, selectable } = renderProps;
+		window.ts.ui.get(`#${id}`, (table) => {
+			if (explode) {
+				table.explode();
+			}
+			if (selectable) {
+				table.selectable();
+			}
 			table.cols(cols);
 			table.rows(rows);
 			if (pager.pages > 1) {
@@ -34,7 +39,7 @@ Table.defaultProps = {
 	pager: { pages: 0, page: 0, onselect: () => {} },
 	className: '',
 	selectable: false,
-	explode: false
+	explode: false,
 };
 Table.propTypes = {
 	id: PropTypes.string.isRequired,
@@ -45,6 +50,6 @@ Table.propTypes = {
 	pager: PropTypes.object,
 	className: PropTypes.string,
 	selectable: PropTypes.bool,
-	explode: PropTypes.bool
+	explode: PropTypes.bool,
 };
 export default Table;

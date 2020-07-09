@@ -31,5 +31,5 @@ stories.add(
 			</fieldset>
 		</Form>
 	),
-	{ info: 'FormSwitch should be used in a form' }
+	{ info: 'FormSwitch should be used in a form' },
 );

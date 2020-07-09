@@ -4,10 +4,8 @@ import { storiesOf } from '@storybook/react';
 import { Tooltip } from '../components';
 
 const stories = storiesOf('Tooltip', module);
-stories.add('Basic usage', () => {
-	return (
-		<Tooltip id="tooltip-example" title="hahha">
-			Tooltip will show on mouse hover.
-		</Tooltip>
-	);
-});
+stories.add('Basic usage', () => (
+	<Tooltip id="tooltip-example" title="hahha">
+		Tooltip will show on mouse hover.
+	</Tooltip>
+	));

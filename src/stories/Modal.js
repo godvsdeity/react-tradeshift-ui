@@ -30,8 +30,8 @@ stories.add(
 	),
 	{
 		info: `In controlled mode the Modal will respect the isOpen attribute at all times.
-	Use the onClose callback to toggle the flag.`
-	}
+	Use the onClose callback to toggle the flag.`,
+	},
 );
 
 stories.add(
@@ -43,8 +43,8 @@ stories.add(
 				type: text('button_class', 'ts-primary'),
 				onclick() {
 					action('onClick');
-				}
-			}
+				},
+			},
 		];
 		return (
 			<Modal
@@ -70,6 +70,6 @@ stories.add(
 	},
 	{
 		info: `In controlled mode the Modal will respect the isOpen attribute at all times.
-	Use the onClose callback to toggle the flag.`
-	}
+	Use the onClose callback to toggle the flag.`,
+	},
 );

@@ -17,8 +17,8 @@ class Footer extends Component {
 		Footer.update(this.props);
 	}
 
-	componentWillReceiveProps(nextProps) {
-		Footer.update(nextProps);
+	componentDidUpdate() {
+		Footer.update(this.props);
 	}
 
 	render() {
@@ -30,7 +30,7 @@ class Footer extends Component {
 Footer.propTypes = {
 	badge: PropTypes.bool,
 	buttons: PropTypes.arrayOf(PropTypes.object),
-	onOpenCollaboration: PropTypes.func
+	onOpenCollaboration: PropTypes.func,
 };
 /* eslint-enable react/no-unused-prop-types, react/require-default-props */
 export default Footer;

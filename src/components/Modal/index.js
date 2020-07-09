@@ -11,24 +11,20 @@ class Modal extends Component {
 		this.onRef = this.onRef.bind(this);
 		this.onOpen = this.onOpen.bind(this);
 		this.onClose = this.onClose.bind(this);
-
-		// Sync open flag for onclose / onopen callbacks
-		this.isOpen = props.isOpen;
 	}
 
-	componentWillReceiveProps(nextProps) {
-		this.isOpen = nextProps.isOpen;
+	componentDidUpdate() {
 		this.onRef(this.modalRef);
 	}
 
 	onClose(e) {
 		this.props.onClose(e);
-		return typeof this.isOpen !== 'undefined' ? !this.isOpen : undefined;
+		return !this.props.isOpen;
 	}
 
 	onOpen(e) {
 		this.props.onOpen(e);
-		return this.isOpen;
+		return this.props.isOpen;
 	}
 
 	onRef(ref) {
@@ -39,7 +35,7 @@ class Modal extends Component {
 			this.modalRef = ref;
 		}
 
-		window.ts.ui.get(ref, spirit => {
+		window.ts.ui.get(ref, (spirit) => {
 			spirit.onclose = this.onClose;
 			spirit.onclosed = this.props.onClosed;
 			spirit.onopen = this.onOpen;
@@ -53,10 +49,10 @@ class Modal extends Component {
 	render() {
 		const modalProps = {
 			'data-ts.title': this.props.title,
-			'data-ts.open': this.props.isOpen
+			'data-ts.open': this.props.isOpen,
 		};
 		const dialogClass = classNames({
-			'ts-micro-modal': this.props.isMicroSize
+			'ts-micro-modal': this.props.isMicroSize,
 		});
 		return (
 			<Portal>
@@ -77,7 +73,7 @@ Modal.propTypes = {
 	onOpened: PropTypes.func,
 	title: PropTypes.string,
 	buttons: PropTypes.arrayOf(PropTypes.object),
-	isMicroSize: PropTypes.bool
+	isMicroSize: PropTypes.bool,
 };
 
 Modal.defaultProps = {
@@ -89,7 +85,7 @@ Modal.defaultProps = {
 	onOpened: noop,
 	title: 'Modal',
 	buttons: undefined,
-	isMicroSize: false
+	isMicroSize: false,
 };
 
 export default Modal;

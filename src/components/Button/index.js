@@ -14,14 +14,14 @@ Button.propTypes = {
 	children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 	busy: PropTypes.bool,
 	type: PropTypes.string,
-	className: PropTypes.string
+	className: PropTypes.string,
 };
 
 Button.defaultProps = {
 	children: null,
 	busy: false,
 	type: 'button',
-	className: undefined
+	className: undefined,
 };
 
 export default Button;

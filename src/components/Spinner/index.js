@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 class Spinner extends React.PureComponent {
 	componentDidUpdate() {
-		window.ts.ui.get('.ts-app', app => {
+		window.ts.ui.get('.ts-app', (app) => {
 			if (this.props.show) {
 				if (this.props.blocking) {
 					app.blocking(this.props.message);
@@ -22,12 +22,12 @@ class Spinner extends React.PureComponent {
 }
 
 Spinner.defaultProps = {
-	blocking: false
+	blocking: false,
 };
 Spinner.propTypes = {
 	show: PropTypes.bool.isRequired,
 	message: PropTypes.string.isRequired,
-	blocking: PropTypes.bool
+	blocking: PropTypes.bool,
 };
 
 export default Spinner;

@@ -14,6 +14,6 @@ stories.add(
 		return <Spinner show={shouldShow} blocking={blocking} message={message} />;
 	},
 	{
-		info: 'The blocking props is treated as false if you don’t set it'
-	}
+		info: 'The blocking props is treated as false if you don’t set it',
+	},
 );

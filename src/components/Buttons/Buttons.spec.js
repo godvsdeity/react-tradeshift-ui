@@ -19,7 +19,7 @@ describe('Buttons', () => {
 						<span>Button Two</span>
 					</button>
 				</li>
-			</Buttons>
+			</Buttons>,
 		);
 
 		expect(wrapper).toMatchSnapshot();
