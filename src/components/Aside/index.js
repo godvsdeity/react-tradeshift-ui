@@ -7,12 +7,18 @@ const noop = () => {};
 class Aside extends Component {
 	static wrapContent(nodes) {
 		const children = React.Children.toArray(nodes);
-		const wrappedTabs = children.every((node) => node.props['data-ts'] === 'Panel');
-		if (nodes && wrappedTabs) {
+		const isPanels = children.every((node) => node.props['data-ts'] === 'Panel');
+		const isRootElements = children.find((node) => node.type === 'footer');
+
+		if (isPanels) {
 			if (children.length === 1) {
 				return nodes;
 			}
 			return <div data-ts="Panels">{nodes}</div>;
+		}
+		// return unwrapped if any of the children will only work as roots:
+		if (isRootElements) {
+			return nodes;
 		}
 		return <div data-ts="Panel">{nodes}</div>;
 	}
