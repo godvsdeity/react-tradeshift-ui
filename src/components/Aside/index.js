@@ -54,9 +54,10 @@ class Aside extends Component {
 	}
 
 	render() {
-		const { isLoading, loadingMessage, title, isOpen, className } = this.props;
+		const { autofocus, isLoading, loadingMessage, title, isOpen, className } = this.props;
 		const busyMessage = isLoading ? loadingMessage : '';
 		const asideProps = {
+			'data-ts.autofocus': autofocus,
 			'data-ts.title': title,
 			'data-ts.open': isOpen,
 			'data-ts.busy': busyMessage,
@@ -79,6 +80,7 @@ class Aside extends Component {
 
 Aside.propTypes = {
 	children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+	autofocus: PropTypes.bool,
 	isLoading: PropTypes.bool,
 	isOpen: PropTypes.bool,
 	loadingMessage: PropTypes.string,
@@ -92,6 +94,7 @@ Aside.propTypes = {
 
 Aside.defaultProps = {
 	children: null,
+	autofocus: true,
 	isLoading: false,
 	isOpen: undefined,
 	loadingMessage: 'Loading...',
