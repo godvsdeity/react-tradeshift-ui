@@ -4,6 +4,7 @@ exports[`Aside Aside tabs 1`] = `
 <portal>
   <aside
     data-ts="Aside"
+    data-ts.autofocus={true}
     data-ts.busy=""
     data-ts.open={false}
     data-ts.title="Aside demo"
@@ -33,6 +34,7 @@ exports[`Aside Controlled mode 1`] = `
   <aside
     className="aside-class"
     data-ts="Aside"
+    data-ts.autofocus={true}
     data-ts.busy=""
     data-ts.open={false}
     data-ts.title="Aside demo"
